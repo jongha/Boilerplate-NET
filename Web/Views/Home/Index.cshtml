@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="row" ng-controller="homeIndexCtrl">
+    <div class="text-center index-area">
+        @*안녕하세요, 지금시간은 00시 00분 입니다
+        한영일,
+        타임존
+        이미지 일주일캐시*@
+
+        <select class="form-control" ng-model="country" ng-options="item for item in countries" ng-cloak="true" ng-show="countries" ng-change="selectCountry()"></select>
+
+        <select class="form-control" ng-model="timeZone" ng-options="item.StandardName as item.DisplayName for item in timeZones" ng-cloak="true" ng-show="timeZones"></select>
+
+        <button class="btn btn-primary"></button>
+
+        @HttpContext.GetLocalResourceObject("~/Views/Home/Index", "test")
+
+    </div>
+</div>

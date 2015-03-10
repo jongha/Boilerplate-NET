@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Sample";
+}
+
+<div class="row" ng-controller="membersListCtrl">
+    <h1>Data-binding using AngularJS</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>CreateDate</th>
+        </tr>
+        <tr ng-repeat="member in members" ng-cloak="true" ng-show="members">
+            <td>{{ member.Id }}</td>
+            <td>{{ member.Email }}</td>
+            <td>{{ member.Name }}</td>
+            <td>{{ member.CreateDate }}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="row">
+    <h1>Data-binding using jQuery</h1>
+    <table class="table table-bordered" id="memberList">
+        <tr>
+            <th>#</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>CreateDate</th>
+        </tr>
+    </table>
+</div>
