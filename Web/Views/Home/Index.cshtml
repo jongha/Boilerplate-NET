@@ -1,21 +1,31 @@
-﻿@{
+﻿@using System.Web.Helpers.Resources;
+@{
     ViewBag.Title = "Home";
 }
-
-<div class="row" ng-controller="homeIndexCtrl">
+<div ng-controller="homeIndexCtrl" class="text-center">
     <div class="text-center index-area">
-        @*안녕하세요, 지금시간은 00시 00분 입니다
-        한영일,
-        타임존
-        이미지 일주일캐시*@
+        <h3>{{ '@Resources.Index.CurrentTimeFormat' | format:[hour, minute] }}</h3>
+    </div>
 
-        <select class="form-control" ng-model="country" ng-options="item for item in countries" ng-cloak="true" ng-show="countries" ng-change="selectCountry()"></select>
+    <div class="form-group center-select">
+        <select class="form-control" ng-model="language" ng-change="selectLanguage()" ng-init="language = '@Culture'">
+            <option value="ko-KR">@Resources.Index.Korean</option>
+            <option value="ja-JP">@Resources.Index.Japanese</option>
+            <option value="en-US">@Resources.Index.English</option>
+        </select>
+    </div>
 
-        <select class="form-control" ng-model="timeZone" ng-options="item.StandardName as item.DisplayName for item in timeZones" ng-cloak="true" ng-show="timeZones"></select>
+    <div class="form-group center-select">
+        <select class="form-control"
+                ng-model="timeZone"
+                ng-options="item as item.DisplayName for item in timeZones"
+                ng-cloak="true"
+                ng-show="timeZones"
+                ng-change="selectTimeZone()"
+                ng-init="timeZoneParam = '@ViewBag.TimeZoneParam'"></select>
+    </div>
 
-        <button class="btn btn-primary"></button>
-
-        @HttpContext.GetLocalResourceObject("~/Views/Home/Index", "test")
-
+    <div class="form-group center-select">
+        <img src="~/Assets/Images/image.jpg?@ViewBag.LatestCacheTag" />
     </div>
 </div>

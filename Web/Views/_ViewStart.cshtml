@@ -1,3 +1,8 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    if (!Request["lang"].IsEmpty())
+    {
+        Culture = UICulture = Request["lang"];
+        Response.Cookies.Add(new HttpCookie("lang", Culture));
+    }
 }

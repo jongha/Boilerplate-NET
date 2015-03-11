@@ -7,6 +7,18 @@
 
   boilerplateApp = angular.module('boilerplateApp', []);
 
+  boilerplateApp.filter('format', function() {
+    return function(input, args) {
+      var exp, i, _i, _ref;
+      input = input || '';
+      for (i = _i = 0, _ref = args.length - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+        exp = new RegExp('\\{' + i + '\\}', 'gi');
+        input = input.replace(exp, args[i]);
+      }
+      return input;
+    };
+  });
+
   boilerplateApp.controller('membersListCtrl', [
     '$scope', '$http', function($scope, $http) {
       $http.get(API_MEMBERLIST).success(function(data, status, headers, config) {
@@ -19,23 +31,45 @@
 
   boilerplateApp.controller('homeIndexCtrl', [
     '$scope', '$http', function($scope, $http) {
-      var getTimeZones;
-      $scope.countries = ['Korea', 'Japan', 'United States of America'];
-      $scope.countrySelected = {
-        name: $scope.countries[0].name
+      var getLocalTime;
+      getLocalTime = function(utcOffset) {
+        var matches, now, tick, utc;
+        now = new Date();
+        tick = 0;
+        if (matches = utcOffset.match(/([+-]?\d{2,2}):(\d{2,2}):(\d{2,2})$/)) {
+          tick = ((parseInt(matches[1]) * 60 * 60) + (parseInt(matches[2]) * 60) + parseInt(matches[3])) * 1000;
+        }
+        utc = now.getTime() + (now.getTimezoneOffset() * 60 * 1000);
+        return new Date(utc + tick);
       };
-      $scope.selectCountry = function() {
-        getTimeZones($scope.country);
+      $scope.selectLanguage = function() {
+        location.href = './?lang=' + $scope.language + '&tz=' + $scope.timeZone.Id;
       };
-      getTimeZones = function(country) {
-        return $http.get(API_TIMEZONE + '?country=' + country).success(function(data, status, headers, config) {
-          $scope.timeZones = data;
-          return $scope.timeZone = data[0].StandardName;
-        }).error(function(data, status, headers, config) {
-          return console.log(data);
-        });
+      $scope.selectTimeZone = function() {
+        var currentDate, hour, minute;
+        currentDate = getLocalTime($scope.timeZone.BaseUtcOffset);
+        hour = currentDate.getHours();
+        minute = currentDate.getMinutes();
+        $scope.hour = hour < 10 ? '0' + hour : hour;
+        $scope.minute = minute < 10 ? '0' + minute : minute;
       };
-      getTimeZones();
+      $http.get(API_TIMEZONE).success(function(data, status, headers, config) {
+        var i, _i, _ref;
+        $scope.timeZones = data;
+        if (!!!$scope.timeZoneParam) {
+          $scope.timeZone = data[0];
+        } else {
+          for (i = _i = 0, _ref = data.length - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+            if ($scope.timeZoneParam === data[i].Id) {
+              $scope.timeZone = data[i];
+              break;
+            }
+          }
+        }
+        $scope.selectTimeZone();
+      }).error(function(data, status, headers, config) {
+        return console.log(data);
+      });
     }
   ]);
 

@@ -26,7 +26,6 @@ namespace Web
             bundles.Add(new ScriptBundle("~/bundles/script").Include(
                         "~/Scripts/angular.min.js",
                         "~/Scripts/moment.min.js",
-                        "~/Scripts/moment-timezone-with-data-2010-2020.js",
                         "~/Scripts/script.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

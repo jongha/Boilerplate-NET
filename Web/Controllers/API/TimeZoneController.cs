@@ -11,18 +11,11 @@ namespace Web.Controllers.API
 {
     public class TimeZoneController : ApiController
     {
-        // GET: api/TimeZone?source=xxx
-        public IEnumerable<TimeZoneInfo> Get([FromUri] string country)
-        {
-            return TimeZoneUtil.GetTimeZones(country);
-        }
-
         // GET: api/TimeZone
         public IEnumerable<TimeZoneInfo> Get()
         {
-            return Get(null);
+            return TimeZoneUtil.GetTimeZones();
         }
-
 
         // GET: api/TimeZone/5
         public string Get(int id)

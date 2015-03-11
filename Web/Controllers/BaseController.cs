@@ -14,6 +14,7 @@ namespace Web.Controllers
         public BaseController()
         {
             ViewBag.SiteName = ConfigurationManager.AppSettings["SiteName"].ToString();
+            ViewBag.LatestCacheTag = ConfigurationManager.AppSettings["LatestCacheTag"].ToString();
 
             String culture = CultureHelper.GetCurrentCulture();
         }

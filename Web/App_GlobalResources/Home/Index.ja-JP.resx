@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="test" xml:space="preserve">
-    <value>it is test</value>
+  <data name="CurrentTimeFormat" xml:space="preserve">
+    <value>こんにちは、今の時間は、{0}時{1}分です。</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>英語</value>
+  </data>
+  <data name="Japanese" xml:space="preserve">
+    <value>日本人</value>
+  </data>
+  <data name="Korean" xml:space="preserve">
+    <value>韓国語</value>
   </data>
 </root>

@@ -16,6 +16,9 @@ namespace Web.Controllers
         {
             log.Info("Home / Index");
 
+            // for timezone permalink param
+            ViewBag.TimeZoneParam = !string.IsNullOrEmpty(Request["tz"]) ? Request["tz"].ToString() : "";
+
             return View();
         }
     }
