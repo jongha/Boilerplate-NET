@@ -13,8 +13,15 @@ namespace Web.Controllers
     {
         public BaseController()
         {
-            ViewBag.SiteName = ConfigurationManager.AppSettings["SiteName"].ToString();
-            ViewBag.LatestCacheTag = ConfigurationManager.AppSettings["LatestCacheTag"].ToString();
+            try // for unit-test
+            {
+                ViewBag.SiteName = ConfigurationManager.AppSettings["SiteName"].ToString();
+                ViewBag.LatestCacheTag = ConfigurationManager.AppSettings["LatestCacheTag"].ToString();
+            }
+            catch {
+                ViewBag.SiteName = "Default Site Name";
+                ViewBag.LatestCacheTag = "";
+            }
 
             String culture = CultureHelper.GetCurrentCulture();
         }

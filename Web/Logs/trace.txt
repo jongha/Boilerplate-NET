@@ -5469,3 +5469,36 @@ Instead, wrap the contents of the block in "{}":
 2015-03-11 17:23:17,874 [32] INFO Web.MvcApplication - EndRequest: ASP.global_asax
 2015-03-11 17:23:18,407 [29] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
 2015-03-11 17:23:18,410 [29] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:03:10,803 [1] INFO Web.MvcApplication - Application Start
+2015-03-11 18:03:11,252 [67] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:03:11,273 [67] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:03:11,649 [67] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:03:12,227 [67] INFO Web.Controllers.HomeController - Home / Index
+2015-03-11 18:03:13,889 [67] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:03:23,811 [1] INFO Web.MvcApplication - Application Start
+2015-03-11 18:03:23,899 [68] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:03:23,922 [68] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:03:24,249 [66] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:03:24,343 [66] INFO Web.Controllers.HomeController - Home / Index
+2015-03-11 18:03:25,075 [66] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:03:33,529 [1] INFO Web.MvcApplication - Application Start
+2015-03-11 18:03:33,644 [66] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:03:33,728 [66] INFO Web.Controllers.HomeController - Home / Index
+2015-03-11 18:03:34,468 [66] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:03:56,765 [66] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:03:56,795 [66] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:03:57,095 [66] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:03:57,169 [66] INFO Web.Controllers.HomeController - Home / Index
+2015-03-11 18:03:57,727 [66] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:04:13,173 [1] INFO Web.MvcApplication - Application Start
+2015-03-11 18:04:13,265 [67] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:04:13,282 [67] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:04:13,577 [68] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:04:13,649 [68] INFO Web.Controllers.HomeController - Home / Index
+2015-03-11 18:04:14,196 [68] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:04:27,056 [1] INFO Web.MvcApplication - Application Start
+2015-03-11 18:04:27,171 [72] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:04:27,189 [72] INFO Web.MvcApplication - EndRequest: ASP.global_asax
+2015-03-11 18:04:27,487 [66] INFO Web.MvcApplication - BeginRequest: ASP.global_asax
+2015-03-11 18:04:27,557 [66] INFO Web.Controllers.HomeController - Home / Index
+2015-03-11 18:04:28,092 [66] INFO Web.MvcApplication - EndRequest: ASP.global_asax
