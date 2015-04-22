@@ -11,3 +11,7 @@ The project for the library that is referenced in the Web project. Util and Help
 ## Web.Tests
 
 The project for Unit-Test. It refers to the Web and Web.Lib project.
+
+## License
+
+boilerplate-net is available under the terms of the [MIT License](https://github.com/jongha/boilerplate-net /blob/master/LICENSE).
