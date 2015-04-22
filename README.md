@@ -14,4 +14,4 @@ The project for Unit-Test. It refers to the Web and Web.Lib project.
 
 ## License
 
-boilerplate-net is available under the terms of the [MIT License](https://github.com/jongha/boilerplate-net /blob/master/LICENSE).
+boilerplate-net is available under the terms of the [MIT License](https://github.com/jongha/boilerplate-net/blob/master/LICENSE).
